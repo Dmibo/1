@@ -17,16 +17,20 @@
 
   // 构建目标链接，并跳转
   function redirectToTarget() {
-    var keyParam = getParameterByName('k');
-    if (keyParam) {
+  var keyParam = getParameterByName('k');
+  if (keyParam) {
+    if (keyParam === 'eUeTaBH') {
+      var directUrl = 'https://imibo.github.io/1/?key=eUeTaBH';
+      window.location.href = directUrl;
+    } else {
       var targetUrl = 'https://service-2006lyrq-1319263575.gz.apigw.tencentcs.com/?k=' + keyParam;
       window.location.href = targetUrl;
-    } else {
-      // 如果没有找到参数，则可以执行其他操作或给出提示
-      alert('未找到参数 key。');
     }
+  } else {
+    // 如果没有找到参数，则可以执行其他操作或给出提示
+    alert('未找到参数 key。');
   }
-
+}
   // 页面加载时调用跳转函数
   redirectToTarget();
   </script>
